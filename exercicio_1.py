@@ -4,6 +4,8 @@ linhas = instancia.readlines()
 primeira_linha = linhas[0]
 dados = primeira_linha.split() #split transforma em string
 
+print(dados)
+
 numero_vertices = int(dados[0])
 numero_arestas = int(dados[1])
 
@@ -39,4 +41,5 @@ for linha in linhas[1:numero_arestas + 1]:
 
 
 print(matriz)
+print("")
 print(lista_adjacencia)
