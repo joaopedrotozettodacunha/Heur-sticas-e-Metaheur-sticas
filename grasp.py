@@ -91,7 +91,7 @@ class Grasp:
 
             lista_restrita_candidatos.append(c)
 
-        return lista_candidatos
+        return lista_restrita_candidatos
 
 
     def aceitar_solucao(self, delta, temperatura):
@@ -193,17 +193,16 @@ def main():
 
     tsp = CaixeiroViajante(None, None, None)
 
-    sa = Grasp(
+    grasp = Grasp(
     tsp,
-    temperatura_inicial=100,
-    sa_max=100,
-    alpha=0.99,
-    cond_parada=0.01
+    alpha_estatico = 0.3,
+    grasp_max = 100,
+      
 )
 
     inicio = time.time()
 
-    melhor_rota, melhor_custo = sa.grasp(cidades)
+    melhor_rota, melhor_custo = grasp.grasp(cidades)
 
     fim = time.time()
 
